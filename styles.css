@@ -1,27 +1,28 @@
-/* styles.css — loud neon 90s, wild fonts (safe overrides) */
+/* styles.css — neon 90s + fun fonts (button-safe, layout friendly) */
 
+/* ===== Neon palette ===== */
 :root{
-  --bg:#000;
-  --text:#eaffff;
+  --bg: #000;
+  --text: #eaffff;
 
-  --hot-pink:#ff2bd6;
-  --hot-green:#39ff14;
-  --grabber-green:#2cff6a;
+  --hot-pink: #ff2bd6;
+  --hot-green: #39ff14;
+  --grabber-green: #2cff6a;
 
   --panel: rgba(0,0,0,.72);
   --panel-border: rgba(255,255,255,.10);
 
-  --glow-pink: 0 0 10px rgba(255,43,214,.75), 0 0 28px rgba(255,43,214,.35), 0 0 80px rgba(255,43,214,.18);
-  --glow-green: 0 0 10px rgba(57,255,20,.75), 0 0 28px rgba(57,255,20,.35), 0 0 80px rgba(57,255,20,.18);
+  --glow-pink: 0 0 10px rgba(255,43,214,.75), 0 0 30px rgba(255,43,214,.25);
+  --glow-green: 0 0 10px rgba(57,255,20,.75), 0 0 30px rgba(57,255,20,.25);
 
   --font-display: "Rubik Wet Paint","Chewy","Bungee","Luckiest Guy","Anton","Orbitron","Kaushan Script",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   --font-body: "Kaushan Script","Rubik Wet Paint","Chewy",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   --font-pixel: "Press Start 2P","Orbitron",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
-*{ box-sizing:border-box; }
+/* ===== Base ===== */
+*{ box-sizing: border-box; }
 
-/* Keep your layout intact: only set colors/background/typography */
 html, body{
   height: 100%;
 }
@@ -30,34 +31,44 @@ body{
   margin: 0;
   color: var(--text);
   background-color: var(--bg);
+  font-family: var(--font-body);
+  line-height: 1.55;
+
   background-image:
     radial-gradient(900px 450px at 10% 10%, rgba(255,43,214,.55), transparent 60%),
-    radial-gradient(900px 450px at 85% 20%, rgba(57,255,20,.55), transparent 62%),
-    radial-gradient(700px 420px at 50% 95%, rgba(44,255,106,.22), transparent 62%),
+    radial-gradient(900px 520px at 85% 20%, rgba(57,255,20,.55), transparent 62%),
+    radial-gradient(700px 420px at 50% 95%, rgba(44,255,106,.20), transparent 62%),
     repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 4px),
     repeating-linear-gradient(90deg, rgba(255,43,214,.05) 0 1px, transparent 1px 6px);
   background-attachment: fixed;
 }
 
+/* ===== Typography ===== */
 h1,h2,h3,h4,h5,h6{
   font-family: var(--font-display);
   letter-spacing: .01em;
   text-shadow: var(--glow-pink), var(--glow-green);
+  margin: 0.6rem 0 0.35rem;
 }
 
-h1{
-  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-  line-height: .95;
-}
+h1{ font-size: clamp(2.2rem, 5.6vw, 4.2rem); line-height: .95; }
+h2{ font-size: clamp(1.6rem, 3.4vw, 2.8rem); }
+h3{ font-size: clamp(1.2rem, 2.4vw, 2rem); }
 
 p, li{
   font-family: var(--font-body);
 }
 
+.small, .fineprint{
+  opacity: .9;
+}
+
+/* ===== Links ===== */
 a{
   color: var(--hot-pink);
-  border-bottom: 2px solid rgba(255,43,214,.85);
   text-decoration: none;
+  border-bottom: 2px solid rgba(255,43,214,.85);
+  padding-bottom: 2px;
   text-shadow: var(--glow-pink);
 }
 
@@ -67,66 +78,100 @@ a:hover{
   text-shadow: var(--glow-green);
 }
 
-/* NeOn panels but don’t wreck spacing/layout */
+/* ===== Layout-safe “neon panel” style ===== */
+/* Doesn’t change positioning/grid/flex—only visuals. */
 .card, .panel, section, .site-header, .hero{
   background: var(--panel);
   border: 2px solid var(--panel-border);
   border-radius: 18px;
-  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 35px rgba(255,43,214,.12), 0 0 55px rgba(57,255,20,.08);
+  box-shadow:
+    0 0 0 rgba(0,0,0,0),
+    0 0 35px rgba(255,43,214,.12),
+    0 0 55px rgba(57,255,20,.08);
 }
 
-/* Buttons: keep your existing layout but ensure they don't “stack weird” */
-button, .btn, .button, input[type="submit"], input[type="button"], .nav-toggle{
+/* ===== Buttons: safe (no position/top/float/grid changes) ===== */
+button,
+.btn,
+.button,
+input[type="submit"],
+input[type="button"],
+.nav-toggle{
   font-family: var(--font-pixel);
   letter-spacing: .02em;
+
   border-radius: 14px;
   border: 2px solid rgba(255,255,255,.14);
 
   color: var(--text);
   background:
-    linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.85)),
-    radial-gradient(120% 180% at 25% 0%, rgba(255,43,214,.65), transparent 55%),
-    radial-gradient(120% 180% at 75% 0%, rgba(57,255,20,.55), transparent 55%);
+    linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.85)),
+    radial-gradient(120% 180% at 25% 0%, rgba(255,43,214,.70), transparent 55%),
+    radial-gradient(120% 180% at 75% 0%, rgba(57,255,20,.60), transparent 55%);
   box-shadow: var(--glow-pink), var(--glow-green);
 
-  /* IMPORTANT: avoid layout-crushing properties */
+  padding: .9rem 1.1rem;
+
+  /* layout-safe: keep browser’s existing layout decisions */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: .9rem 1.1rem;
+  gap: .5rem;
 }
 
-/* If your CSS already positions buttons, these help prevent overlaps */
-button, .btn, .button, input[type="submit"], input[type="button"], .nav-toggle{
-  position: relative;
-}
-
-button:hover, .btn:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover, .nav-toggle:hover{
+/* Make sure buttons don’t “collapse” */
+button:where(:not([disabled]):hover),
+.btn:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.nav-toggle:hover{
   border-color: rgba(57,255,20,.75);
-  filter: saturate(1.25) brightness(1.06);
-  cursor: pointer;
+  filter: saturate(1.25) brightness(1.05);
 }
 
-/* Forms: only style colors/borders */
+/* Avoid layout weirdness from focus rings */
+button:focus-visible,
+.btn:focus-visible,
+.button:focus-visible,
+.nav-toggle:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(255,43,214,.18),
+    0 0 0 9px rgba(57,255,20,.12),
+    var(--glow-pink),
+    var(--glow-green);
+}
+
+/* ===== Forms ===== */
 input, textarea, select{
   font-family: var(--font-body);
-  background: rgba(0,0,0,.62);
-  color: var(--text);
-  border: 2px solid rgba(255,255,255,.10);
+  width: 100%;
+  padding: .85rem 1rem;
+
   border-radius: 14px;
+  border: 2px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.60);
+  color: var(--text);
+
+  transition: border-color .12s ease, box-shadow .12s ease, filter .12s ease;
 }
 
 input:focus, textarea:focus, select:focus{
   outline: none;
   border-color: rgba(255,43,214,.85);
-  box-shadow: 0 0 0 4px rgba(255,43,214,.16), 0 0 26px rgba(57,255,20,.18);
+  box-shadow: 0 0 0 4px rgba(255,43,214,.16), 0 0 26px rgba(57,255,20,.16);
 }
 
-/* Divider */
+textarea{ min-height: 130px; }
+
+/* ===== Neon divider ===== */
 .hr, hr{
-  height: 4px;
   border: 0;
+  height: 4px;
+  margin: 1.2rem 0;
   background: linear-gradient(90deg,
     transparent,
     rgba(44,255,106,.95),
@@ -136,23 +181,30 @@ input:focus, textarea:focus, select:focus{
   box-shadow: var(--glow-green), var(--glow-pink);
 }
 
-/* Accessible skip link (keeps it from breaking layout) */
+/* ===== Skip link (safe) ===== */
 .skip-link{
-  position:absolute;
-  left:-999px;
-  top:auto;
-  width:1px; height:1px;
-  overflow:hidden;
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
   z-index: 9999;
 }
 
 .skip-link:focus{
   left: 1rem;
   top: 1rem;
-  width: auto; height: auto;
+  width: auto;
+  height: auto;
   padding: .7rem 1rem;
   border-radius: 12px;
   border: 2px solid rgba(255,255,255,.18);
   background: rgba(0,0,0,.85);
   box-shadow: var(--glow-pink), var(--glow-green);
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior: auto; }
 }
