@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>
+    {% if page.title %}{{ page.title }} — {% endif %}
+    {{ site.title }}
+  </title>
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand-spark">✦</span> {{ site.title }}
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="{{ '/events' | relative_url }}">Events</a>
+        <a href="{{ '/booking' | relative_url }}">Booking</a>
+        <a href="{{ '/about' | relative_url }}">About</a>
+        <a href="{{ '/bios' | relative_url }}">Bios</a>
+        <a href="{{ '/link-tree' | relative_url }}">Link Tree</a>
+        <a href="{{ '/contact' | relative_url }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">The Full 90s Experience</h1>
+        <p class="hero-subtitle">
+          {{ site.description }}
+        </p>
+      </div>
+    </section>
+
+    <article class="card">
+      {{ content }}
+    </article>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>© {{ site.time | date: "%Y" }} {{ site.title }}</span>
+        <span class="footer-links">
+          <a href="{{ '/booking' | relative_url }}">Book us</a>
+          <a href="{{ '/events' | relative_url }}">See events</a>
+        </span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
