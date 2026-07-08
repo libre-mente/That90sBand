@@ -1,4 +1,4 @@
-/* styles.css — loud 90s neon + wilder fonts (Hot pink + Neon green) */
+/* styles.css — loud neon 90s, wild fonts (safe overrides) */
 
 :root{
   --bg:#000;
@@ -11,151 +11,132 @@
   --panel: rgba(0,0,0,.72);
   --panel-border: rgba(255,255,255,.10);
 
-  --glow-pink: 0 0 10px rgba(255,43,214,.7), 0 0 28px rgba(255,43,214,.35), 0 0 70px rgba(255,43,214,.20);
-  --glow-green: 0 0 10px rgba(57,255,20,.7), 0 0 28px rgba(57,255,20,.35), 0 0 70px rgba(57,255,20,.20);
+  --glow-pink: 0 0 10px rgba(255,43,214,.75), 0 0 28px rgba(255,43,214,.35), 0 0 80px rgba(255,43,214,.18);
+  --glow-green: 0 0 10px rgba(57,255,20,.75), 0 0 28px rgba(57,255,20,.35), 0 0 80px rgba(57,255,20,.18);
 
   --font-display: "Rubik Wet Paint","Chewy","Bungee","Luckiest Guy","Anton","Orbitron","Kaushan Script",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  --font-body: "Kaushan Script","Rubik Wet Paint","Chewy","Comic Sans MS",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  --font-body: "Kaushan Script","Rubik Wet Paint","Chewy",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   --font-pixel: "Press Start 2P","Orbitron",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
 *{ box-sizing:border-box; }
 
-html,body{ height:100%; }
+/* Keep your layout intact: only set colors/background/typography */
+html, body{
+  height: 100%;
+}
 
 body{
-  margin:0 !important;
-  color: var(--text) !important;
-  background-color: var(--bg) !important;
-
-  /* more intense neon */
+  margin: 0;
+  color: var(--text);
+  background-color: var(--bg);
   background-image:
-    radial-gradient(900px 450px at 10% 10%, rgba(255,43,214,.65), transparent 60%),
-    radial-gradient(900px 450px at 85% 20%, rgba(57,255,20,.65), transparent 62%),
-    radial-gradient(700px 420px at 50% 95%, rgba(44,255,106,.20), transparent 62%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,.08) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, rgba(255,43,214,.05) 0 1px, transparent 1px 6px) !important;
+    radial-gradient(900px 450px at 10% 10%, rgba(255,43,214,.55), transparent 60%),
+    radial-gradient(900px 450px at 85% 20%, rgba(57,255,20,.55), transparent 62%),
+    radial-gradient(700px 420px at 50% 95%, rgba(44,255,106,.22), transparent 62%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(255,43,214,.05) 0 1px, transparent 1px 6px);
+  background-attachment: fixed;
+}
 
-  background-attachment: fixed !important;
-  font-family: var(--font-body) !important;
-  line-height: 1.45 !important;
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-display);
+  letter-spacing: .01em;
+  text-shadow: var(--glow-pink), var(--glow-green);
+}
+
+h1{
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  line-height: .95;
+}
+
+p, li{
+  font-family: var(--font-body);
 }
 
 a{
-  color: var(--hot-pink) !important;
-  border-bottom: 2px solid rgba(255,43,214,.85) !important;
-  text-decoration: none !important;
-  text-shadow: var(--glow-pink) !important;
+  color: var(--hot-pink);
+  border-bottom: 2px solid rgba(255,43,214,.85);
+  text-decoration: none;
+  text-shadow: var(--glow-pink);
 }
 
 a:hover{
-  color: var(--hot-green) !important;
-  border-bottom-color: rgba(57,255,20,.95) !important;
-  text-shadow: var(--glow-green) !important;
+  color: var(--hot-green);
+  border-bottom-color: rgba(57,255,20,.95);
+  text-shadow: var(--glow-green);
 }
 
-/* site-wide typography */
-h1,h2,h3,h4,h5,h6{
-  font-family: var(--font-display) !important;
-  letter-spacing: .01em !important;
-  text-transform: none !important;
-  text-shadow: var(--glow-pink), var(--glow-green) !important;
-}
-
-h1{ font-size: clamp(2.2rem, 5.5vw, 4.2rem) !important; line-height: .95 !important; }
-h2{ font-size: clamp(1.6rem, 3.5vw, 2.8rem) !important; }
-h3{ font-size: clamp(1.25rem, 2.4vw, 2.0rem) !important; }
-
-p,li{
-  font-family: var(--font-body) !important;
-}
-
-/* panels/cards/sections */
+/* NeOn panels but don’t wreck spacing/layout */
 .card, .panel, section, .site-header, .hero{
-  background: var(--panel) !important;
-  border: 2px solid var(--panel-border) !important;
-  border-radius: 18px !important;
-  box-shadow:
-    0 0 0 rgba(0,0,0,0),
-    0 0 35px rgba(255,43,214,.12),
-    0 0 55px rgba(57,255,20,.08) !important;
+  background: var(--panel);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 35px rgba(255,43,214,.12), 0 0 55px rgba(57,255,20,.08);
 }
 
-/* Header/brand polish (matches your markup: .site-header .brand etc.) */
-.site-header{
-  padding: 1.2rem 0 !important;
-}
-
-.brand{
-  display:flex !important;
-  align-items:center !important;
-  gap: .9rem !important;
-}
-
-.brand-mark{
-  font-family: var(--font-pixel) !important;
-  color: var(--hot-green) !important;
-  text-shadow: var(--glow-green) !important;
-}
-
-.brand-text{
-  display:flex !important;
-  flex-direction:column !important;
-}
-
-.brand-name{
-  font-family: var(--font-display) !important;
-  color: #fff !important;
-  text-shadow: var(--glow-pink), var(--glow-green) !important;
-}
-
-.brand-tag{
-  font-family: var(--font-body) !important;
-  color: rgba(234,255,255,.85) !important;
-}
-
-/* Buttons / inputs */
+/* Buttons: keep your existing layout but ensure they don't “stack weird” */
 button, .btn, .button, input[type="submit"], input[type="button"], .nav-toggle{
-  font-family: var(--font-pixel) !important;
-  border-radius: 14px !important;
-  border: 2px solid rgba(255,255,255,.14) !important;
+  font-family: var(--font-pixel);
+  letter-spacing: .02em;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,.14);
+
+  color: var(--text);
   background:
-    linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.85)) !important;
-  color: var(--text) !important;
-  box-shadow: var(--glow-pink), var(--glow-green) !important;
-  transition: transform .12s ease, filter .12s ease, border-color .12s ease !important;
+    linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.85)),
+    radial-gradient(120% 180% at 25% 0%, rgba(255,43,214,.65), transparent 55%),
+    radial-gradient(120% 180% at 75% 0%, rgba(57,255,20,.55), transparent 55%);
+  box-shadow: var(--glow-pink), var(--glow-green);
+
+  /* IMPORTANT: avoid layout-crushing properties */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .9rem 1.1rem;
+}
+
+/* If your CSS already positions buttons, these help prevent overlaps */
+button, .btn, .button, input[type="submit"], input[type="button"], .nav-toggle{
+  position: relative;
 }
 
 button:hover, .btn:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover, .nav-toggle:hover{
-  transform: translateY(-1px) scale(1.01) !important;
-  filter: saturate(1.25) brightness(1.06) !important;
-  border-color: rgba(57,255,20,.75) !important;
+  border-color: rgba(57,255,20,.75);
+  filter: saturate(1.25) brightness(1.06);
+  cursor: pointer;
 }
 
+/* Forms: only style colors/borders */
 input, textarea, select{
-  font-family: var(--font-body) !important;
-  background: rgba(0,0,0,.62) !important;
-  color: var(--text) !important;
-  border: 2px solid rgba(255,255,255,.10) !important;
-  border-radius: 14px !important;
-  box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+  font-family: var(--font-body);
+  background: rgba(0,0,0,.62);
+  color: var(--text);
+  border: 2px solid rgba(255,255,255,.10);
+  border-radius: 14px;
 }
 
 input:focus, textarea:focus, select:focus{
-  outline: none !important;
-  border-color: rgba(255,43,214,.85) !important;
-  box-shadow: 0 0 0 4px rgba(255,43,214,.16), 0 0 26px rgba(57,255,20,.18) !important;
+  outline: none;
+  border-color: rgba(255,43,214,.85);
+  box-shadow: 0 0 0 4px rgba(255,43,214,.16), 0 0 26px rgba(57,255,20,.18);
 }
 
-/* neon divider */
+/* Divider */
 .hr, hr{
-  height: 4px !important;
-  border: 0 !important;
-  background: linear-gradient(90deg, transparent, rgba(44,255,106,.95), rgba(255,43,214,.95), rgba(44,255,106,.95), transparent) !important;
-  box-shadow: var(--glow-green), var(--glow-pink) !important;
+  height: 4px;
+  border: 0;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(44,255,106,.95),
+    rgba(255,43,214,.95),
+    rgba(44,255,106,.95),
+    transparent);
+  box-shadow: var(--glow-green), var(--glow-pink);
 }
 
-/* skip link: ensure it’s visible when focused */
+/* Accessible skip link (keeps it from breaking layout) */
 .skip-link{
   position:absolute;
   left:-999px;
@@ -174,5 +155,4 @@ input:focus, textarea:focus, select:focus{
   border: 2px solid rgba(255,255,255,.18);
   background: rgba(0,0,0,.85);
   box-shadow: var(--glow-pink), var(--glow-green);
-  color: var(--text);
 }
