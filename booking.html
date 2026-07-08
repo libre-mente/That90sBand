@@ -1,1 +1,140 @@
+<!-- booking.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking — That 90’s Band</title>
+  <meta name="description" content="Booking contact for That 90’s Band 90s cover band." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="That 90’s Band Home">
+        <span class="brand-mark" aria-hidden="true">9B</span>
+        <span class="brand-text">
+          <span class="brand-name">That 90’s Band</span>
+          <span class="brand-tag">90s Cover Band</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="band.html">Band</a>
+        <a class="nav-link" href="events.html">Upcoming Events</a>
+        <a class="nav-link" href="videos.html">Videos</a>
+        <a class="nav-link active" href="booking.html">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1>Booking</h1>
+          <p class="muted">Send date + venue details and we’ll confirm availability.</p>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-card">
+            <h2>Contact</h2>
+            <p class="muted">Email is fastest. Include date, venue, city, set length, and expected audience size.</p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="contact-label">Email</span>
+                <a class="contact-value" href="mailto:dogoodnow@riseup.net">dogoodnow@riseup.net</a>
+              </li>
+              <li>
+                <span class="contact-label">Phone</span>
+                <a class="contact-value" href="tel:+10000000000">(000) 000-0000</a>
+              </li>
+              <li>
+                <span class="contact-label">Region</span>
+                <span class="contact-value">Colorado & Northern New Mexico</span>
+              </li>
+              <li>
+                <span class="contact-label">Social</span>
+                <a class="contact-value" href="#" target="_blank" rel="noreferrer">Instagram / Facebook</a>
+              </li>
+            </ul>
+
+            <div class="booking-note">
+              <p>
+                Prefer email? That’s the easiest way to get everything confirmed quickly.
+              </p>
+            </div>
+          </div>
+
+          <div class="booking-card form-card">
+            <h2>Send a Quick Request</h2>
+            <p class="muted">
+              This demo form is front-end only. For real email delivery, use the email address above.
+            </p>
+
+            <form id="contactForm">
+              <label class="field">
+                <span class="field-label">Your Name</span>
+                <input name="name" type="text" required placeholder="Jane Doe" />
+              </label>
+
+              <label class="field">
+                <span class="field-label">Email</span>
+                <input name="email" type="email" required placeholder="jane@example.com" />
+              </label>
+
+              <label class="field">
+                <span class="field-label">Event Date</span>
+                <input name="date" type="date" />
+              </label>
+
+              <label class="field">
+                <span class="field-label">Message</span>
+                <textarea name="message" rows="5" required placeholder="Venue, city, set length, and any details…"></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="submit">Submit Request</button>
+              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo" aria-hidden="true">9B</div>
+        <div>
+          <div class="footer-name">That 90’s Band</div>
+          <div class="footer-muted">90s Cover Band • Colorado & Northern New Mexico</div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="band.html">Band</a>
+        <a href="events.html">Events</a>
+        <a href="videos.html">Videos</a>
+        <a href="booking.html">Booking</a>
+      </div>
+
+      <div class="footer-note">
+        <small>© <span id="year"></span> That 90’s Band. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
 
