@@ -1,231 +1,161 @@
-/* styles.css — extra-neon 90s cover-band vibe (black + hot pink/green) */
+/* styles.css — “DOA” neon: hot pink + neon green, black, loud 90s */
 
 :root{
-  --bg: #000;
-  --text: #e9fff7;
+  --bg:#000000;
+  --text:#eaffff;
 
-  /* Hot 90s neon palette */
-  --neon-hot-pink: #ff2bd6;
-  --neon-pink: #ff4fd8;
-  --neon-hot-green: #39ff14;   /* neon green */
-  --neon-green: #2cff6a;       /* grabber-ish */
-  --neon-yellow: #f7ff2a;
+  /* 90s hot neon colors */
+  --hot-pink:#ff2bd6;
+  --hot-green:#39ff14;
+  --grabber-green:#2cff6a;
+  --hot-cyan:#00f5ff; /* optional accent */
 
-  --panel: rgba(6, 6, 6, .72);
+  --panel: rgba(0,0,0,.72);
+  --panel-border: rgba(255,255,255,.08);
 
-  --ring: rgba(57, 255, 20, .55);
-  --shadow: 0 0 18px rgba(255, 43, 214, .35), 0 0 55px rgba(57, 255, 20, .20);
-  --glow-pink: 0 0 12px rgba(255, 43, 214, .45), 0 0 28px rgba(255, 43, 214, .28);
-  --glow-green: 0 0 12px rgba(57, 255, 20, .45), 0 0 28px rgba(57, 255, 20, .28);
+  --glow-pink: 0 0 10px rgba(255,43,214,.65), 0 0 30px rgba(255,43,214,.35);
+  --glow-green: 0 0 10px rgba(57,255,20,.65), 0 0 30px rgba(57,255,20,.35);
+
+  /* make glow stronger */
+  --glow-pink-strong: 0 0 18px rgba(255,43,214,.85), 0 0 55px rgba(255,43,214,.45);
+  --glow-green-strong: 0 0 18px rgba(57,255,20,.85), 0 0 55px rgba(57,255,20,.45);
+
+  /* wild fonts (loaded by the <link> above) */
+  --font-display: "Rubik Wet Paint","Chewy","Bungee","Luckiest Guy","Kaushan Script","Orbitron","Anton",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  --font-body: "Kaushan Script","Rubik Wet Paint","Chewy",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  --font-pixel: "Press Start 2P","Orbitron",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
-*{ box-sizing: border-box; }
+*{ box-sizing:border-box; }
 
-html, body{ height: 100%; }
+html,body{ height:100%; }
 
 body{
-  margin: 0;
+  margin:0;
   color: var(--text);
   background-color: var(--bg);
 
-  /* more intense neon + “tape/scanline” energy */
+  /* stronger neon + scanlines */
   background-image:
-    radial-gradient(900px 450px at 15% 10%, rgba(255, 43, 214, .55), transparent 60%),
-    radial-gradient(900px 450px at 85% 20%, rgba(57, 255, 20, .50), transparent 62%),
-    radial-gradient(800px 420px at 50% 95%, rgba(247, 255, 42, .20), transparent 60%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 1px, transparent 1px 5px);
+    radial-gradient(1000px 500px at 10% 15%, rgba(255,43,214,.55), transparent 58%),
+    radial-gradient(900px 520px at 85% 20%, rgba(57,255,20,.55), transparent 60%),
+    radial-gradient(700px 420px at 50% 95%, rgba(44,255,106,.20), transparent 62%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(255,43,214,.05) 0 1px, transparent 1px 6px);
   background-attachment: fixed;
 }
 
-/* If your HTML doesn’t already link these fonts, add them:
-   - Bungee
-   - Anton
-   - Luckiest Guy
-   - Press Start 2P
-   - Orbitron
-   - Monoton
-   (via Google Fonts or similar)
-   Then keep these as your fallbacks. */
-:root{
-  --font-display: "Luckiest Guy","Bungee","Anton","Orbitron","Press Start 2P","Monoton", "Comic Sans MS", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-body: "Comic Sans MS","Trebuchet MS", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
+.container, main, .content{ width:min(1100px,92vw); margin:0 auto; }
 
-.container, main, .content{
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-}
-
-/* Strong neon headings */
-h1, h2, h3, h4, h5, h6{
+/* typography */
+h1,h2,h3,h4,h5,h6{
   font-family: var(--font-display);
+  margin: .6rem 0 .4rem;
   letter-spacing: .02em;
-  margin: 0.6rem 0 0.35rem;
-  text-shadow:
-    0 0 6px rgba(255, 43, 214, .55),
-    0 0 16px rgba(255, 43, 214, .35),
-    0 0 10px rgba(57, 255, 20, .30);
+  text-transform: none;
 }
 
 h1{
-  font-size: clamp(2.2rem, 5.4vw, 3.9rem);
-  line-height: 1.0;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: .95;
+  text-shadow: var(--glow-pink-strong), var(--glow-green-strong);
 }
-h2{ font-size: clamp(1.5rem, 3.6vw, 2.6rem); }
-h3{ font-size: clamp(1.2rem, 2.6vw, 1.7rem); }
 
-p{
+h2{
+  font-size: clamp(1.6rem, 3.6vw, 2.8rem);
+  text-shadow: var(--glow-green), var(--glow-pink);
+}
+
+p,li{
   font-family: var(--font-body);
-  margin: 0.35rem 0 1rem;
   font-size: 1.05rem;
+  text-shadow: 0 0 10px rgba(0,245,255,.08);
 }
 
-/* Links */
 a{
-  color: var(--neon-hot-pink);
-  border-bottom: 2px solid rgba(255, 43, 214, .75);
+  color: var(--hot-pink);
   text-decoration: none;
+  border-bottom: 2px solid rgba(255,43,214,.85);
   padding-bottom: 2px;
   text-shadow: var(--glow-pink);
 }
+
 a:hover{
-  color: var(--neon-hot-green);
-  border-bottom-color: rgba(57, 255, 20, .9);
+  color: var(--hot-green);
+  border-bottom-color: rgba(57,255,20,.95);
   text-shadow: var(--glow-green);
 }
 
-/* Neon buttons */
-button, .btn, .button, input[type="submit"], input[type="button"]{
-  font-family: var(--font-display);
-  border-radius: 14px;
-  border: 2px solid rgba(255,255,255,.12);
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.7)),
-    radial-gradient(120% 180% at 30% 0%, rgba(255, 43, 214, .55), transparent 55%),
-    radial-gradient(120% 180% at 70% 0%, rgba(57, 255, 20, .45), transparent 55%);
-  color: #eaffff;
-  padding: .85rem 1.15rem;
-  cursor: pointer;
-  box-shadow:
-    0 0 0 rgba(0,0,0,0),
-    0 0 18px rgba(255, 43, 214, .18),
-    0 0 28px rgba(57, 255, 20, .12);
-  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease, border-color .12s ease;
-}
-
-button:hover, .btn:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover{
-  transform: translateY(-1px) scale(1.01);
-  filter: saturate(1.25) brightness(1.05);
-  border-color: rgba(57, 255, 20, .75);
-  box-shadow:
-    0 0 0 rgba(0,0,0,0),
-    0 0 30px rgba(255, 43, 214, .28),
-    0 0 70px rgba(57, 255, 20, .18);
-}
-
-button:active, .btn:active, .button:active{
-  transform: translateY(0) scale(.99);
-}
-
-/* Neon panels/cards */
-.card, .panel, section{
+/* panels/cards */
+.card,.panel,section{
   background: var(--panel);
-  border: 2px solid rgba(255,255,255,.07);
+  border: 2px solid var(--panel-border);
   border-radius: 18px;
   padding: 1.2rem;
-  box-shadow:
-    0 0 0 rgba(0,0,0,0),
-    0 0 26px rgba(255, 43, 214, .08);
-  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0), 0 0 35px rgba(255,43,214,.10);
 }
 
-.card:hover, .panel:hover{
-  border-color: rgba(57, 255, 20, .30);
-  box-shadow:
-    0 0 18px rgba(255, 43, 214, .14),
-    0 0 70px rgba(57, 255, 20, .10);
-  transform: translateY(-1px);
+.card:hover,.panel:hover,section:hover{
+  border-color: rgba(57,255,20,.28);
+  box-shadow: 0 0 25px rgba(255,43,214,.18), 0 0 60px rgba(57,255,20,.10);
 }
 
-/* Neon dividers */
-.hr, hr{
+/* Neon divider */
+.hr,hr{
+  height: 4px;
   border: 0;
-  height: 3px;
   margin: 1.2rem 0;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(57,255,20,.95),
-    rgba(255,43,214,.95),
-    rgba(57,255,20,.95),
-    transparent);
-  box-shadow:
-    0 0 18px rgba(57,255,20,.32),
-    0 0 18px rgba(255,43,214,.28);
+  background: linear-gradient(90deg, transparent, rgba(57,255,20,.95), rgba(255,43,214,.95), rgba(57,255,20,.95), transparent);
+  box-shadow: 0 0 22px rgba(57,255,20,.35), 0 0 22px rgba(255,43,214,.30);
 }
 
-/* Marquee-like neon title sparkle */
-.neon-title{
-  position: relative;
-  display: inline-block;
-  padding: .06em .12em;
-}
-.neon-title::before{
-  content: "";
-  position: absolute;
-  inset: -8px -14px;
+/* Buttons */
+button,.btn,.button,input[type="submit"],input[type="button"]{
+  font-family: var(--font-pixel);
+  letter-spacing: .02em;
+
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,.12);
+
+  color: #eaffff;
   background:
-    radial-gradient(closest-side, rgba(255, 43, 214, .35), transparent 65%),
-    radial-gradient(closest-side, rgba(57, 255, 20, .28), transparent 65%);
-  filter: blur(12px);
-  opacity: .95;
-  z-index: -1;
-}
-.neon-title::after{
-  content: "";
-  position: absolute;
-  left: -10%;
-  right: -10%;
-  top: 55%;
-  height: 16px;
-  transform: translateY(-50%);
-  background: linear-gradient(90deg, transparent, rgba(57,255,20,.8), rgba(255,43,214,.9), transparent);
-  filter: blur(10px);
-  opacity: .9;
-  animation: sweepNeon 2.6s linear infinite;
-  z-index: -1;
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.75)),
+    radial-gradient(120% 180% at 25% 10%, rgba(255,43,214,.65), transparent 55%),
+    radial-gradient(120% 180% at 75% 0%, rgba(57,255,20,.55), transparent 55%);
+
+  box-shadow: var(--glow-pink), var(--glow-green);
+  padding: .9rem 1.1rem;
+  cursor: pointer;
+
+  transition: transform .12s ease, filter .12s ease, border-color .12s ease;
 }
 
-@keyframes sweepNeon{
-  0%{ transform: translateY(-50%) translateX(-40px); opacity: .15; }
-  25%{ opacity: .95; }
-  100%{ transform: translateY(-50%) translateX(40px); opacity: .15; }
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+  transform: translateY(-1px) scale(1.01);
+  border-color: rgba(57,255,20,.65);
+  filter: saturate(1.25) brightness(1.05);
 }
 
-/* Inputs */
-input, textarea, select{
-  width: 100%;
+input,textarea,select{
+  width:100%;
   font: inherit;
   padding: .85rem 1rem;
+
   border-radius: 14px;
   border: 2px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.55);
+  background: rgba(0,0,0,.6);
+
   color: var(--text);
   outline: none;
+
   box-shadow: 0 0 0 rgba(0,0,0,0);
-  transition: border-color .12s ease, box-shadow .12s ease, filter .12s ease;
 }
 
-input:focus, textarea:focus, select:focus{
-  border-color: rgba(255, 43, 214, .65);
-  box-shadow: 0 0 0 4px rgba(255, 43, 214, .18), 0 0 26px rgba(57, 255, 20, .20);
-  filter: saturate(1.2);
+input:focus,textarea:focus,select:focus{
+  border-color: rgba(255,43,214,.85);
+  box-shadow: 0 0 0 4px rgba(255,43,214,.16), 0 0 26px rgba(57,255,20,.16);
 }
 
-textarea{ min-height: 130px; resize: vertical; }
-
-/* Reduce motion */
 @media (prefers-reduced-motion: reduce){
-  .neon-title::after{ animation: none; }
-  button, .btn, .button{ transition: none; }
+  *{ scroll-behavior:auto; }
 }
