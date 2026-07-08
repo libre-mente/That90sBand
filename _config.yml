@@ -3,3 +3,4 @@ description: "90s cover band • bringing the nostalgia back live."
 theme: jekyll-theme-hacker
 url: "https://that90sband.net"
 baseurl: ""
+show_github: false
