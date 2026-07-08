@@ -4,3 +4,5 @@ theme: jekyll-theme-hacker
 url: "https://that90sband.net"
 baseurl: ""
 show_github: false
+github_username: ""
+
