@@ -1,1 +1,133 @@
+<!-- videos.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos — That 90’s Band</title>
+  <meta name="description" content="Watch That 90’s Band perform live — 90s covers across Colorado and Northern New Mexico." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="That 90’s Band Home">
+        <span class="brand-mark" aria-hidden="true">9B</span>
+        <span class="brand-text">
+          <span class="brand-name">That 90’s Band</span>
+          <span class="brand-tag">90s Cover Band</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="band.html">Band</a>
+        <a class="nav-link" href="events.html">Upcoming Events</a>
+        <a class="nav-link active" href="videos.html">Videos</a>
+        <a class="nav-link" href="booking.html">Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1>Performance Videos</h1>
+          <p class="muted">Embed your YouTube or Vimeo videos below.</p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_1"
+                title="That 90’s Band — Live"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-meta">
+              <h3>Live Set — Highlights</h3>
+              <p class="muted">Add venue + date here.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_2"
+                title="That 90’s Band — Live"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-meta">
+              <h3>90s Sing-Along Moment</h3>
+              <p class="muted">Add venue + date here.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_3"
+                title="That 90’s Band — Live"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-meta">
+              <h3>Full Band Energy</h3>
+              <p class="muted">Add venue + date here.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div class="callout-copy">
+            <h3>Want to book That 90’s Band?</h3>
+            <p class="muted">Use the booking info on this site.</p>
+          </div>
+          <a class="btn btn-primary" href="booking.html">Book Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo" aria-hidden="true">9B</div>
+        <div>
+          <div class="footer-name">That 90’s Band</div>
+          <div class="footer-muted">90s Cover Band • Colorado & Northern New Mexico</div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="band.html">Band</a>
+        <a href="events.html">Events</a>
+        <a href="videos.html">Videos</a>
+        <a href="booking.html">Booking</a>
+      </div>
+
+      <div class="footer-note">
+        <small>© <span id="year"></span> That 90’s Band. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
 
