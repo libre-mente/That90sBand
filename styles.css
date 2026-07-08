@@ -1,19 +1,21 @@
-/* styles.css — neon 90s + fun fonts (button-safe, layout friendly) */
+/* styles.css — neon 90s (subdued glow, better readability) */
 
 /* ===== Neon palette ===== */
 :root{
   --bg: #000;
-  --text: #eaffff;
+  --text: #d7f8f0;          /* less harsh than #eaffff */
+  --text-dim: #b7f0e5;
 
   --hot-pink: #ff2bd6;
   --hot-green: #39ff14;
   --grabber-green: #2cff6a;
 
-  --panel: rgba(0,0,0,.72);
+  --panel: rgba(0,0,0,.78);
   --panel-border: rgba(255,255,255,.10);
 
-  --glow-pink: 0 0 10px rgba(255,43,214,.75), 0 0 30px rgba(255,43,214,.25);
-  --glow-green: 0 0 10px rgba(57,255,20,.75), 0 0 30px rgba(57,255,20,.25);
+  /* reduce glow + blur = less blurry text */
+  --glow-pink: 0 0 6px rgba(255,43,214,.45), 0 0 16px rgba(255,43,214,.18);
+  --glow-green: 0 0 6px rgba(57,255,20,.45), 0 0 16px rgba(57,255,20,.18);
 
   --font-display: "Rubik Wet Paint","Chewy","Bungee","Luckiest Guy","Anton","Orbitron","Kaushan Script",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   --font-body: "Kaushan Script","Rubik Wet Paint","Chewy",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -23,9 +25,7 @@
 /* ===== Base ===== */
 *{ box-sizing: border-box; }
 
-html, body{
-  height: 100%;
-}
+html, body{ height: 100%; }
 
 body{
   margin: 0;
@@ -34,20 +34,23 @@ body{
   font-family: var(--font-body);
   line-height: 1.55;
 
+  /* slightly dimmer background “neon” */
   background-image:
-    radial-gradient(900px 450px at 10% 10%, rgba(255,43,214,.55), transparent 60%),
-    radial-gradient(900px 520px at 85% 20%, rgba(57,255,20,.55), transparent 62%),
-    radial-gradient(700px 420px at 50% 95%, rgba(44,255,106,.20), transparent 62%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, rgba(255,43,214,.05) 0 1px, transparent 1px 6px);
+    radial-gradient(900px 420px at 10% 10%, rgba(255,43,214,.35), transparent 60%),
+    radial-gradient(900px 460px at 85% 20%, rgba(57,255,20,.30), transparent 62%),
+    radial-gradient(700px 400px at 50% 95%, rgba(44,255,106,.14), transparent 62%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(255,43,214,.03) 0 1px, transparent 1px 6px);
   background-attachment: fixed;
 }
 
-/* ===== Typography ===== */
+/* ===== Typography (less blur, more readable) ===== */
 h1,h2,h3,h4,h5,h6{
   font-family: var(--font-display);
   letter-spacing: .01em;
-  text-shadow: var(--glow-pink), var(--glow-green);
+
+  /* keep a tiny neon tint but remove heavy blur */
+  text-shadow: 0 0 0 rgba(0,0,0,0), 0 0 10px rgba(255,43,214,.12);
   margin: 0.6rem 0 0.35rem;
 }
 
@@ -57,40 +60,40 @@ h3{ font-size: clamp(1.2rem, 2.4vw, 2rem); }
 
 p, li{
   font-family: var(--font-body);
+  color: var(--text);
+  /* remove neon glow from body text to reduce blurriness */
+  text-shadow: none;
 }
 
-.small, .fineprint{
-  opacity: .9;
-}
+.small, .fineprint{ color: var(--text-dim); opacity: .95; }
 
-/* ===== Links ===== */
+/* ===== Links (still neon, less glow) ===== */
 a{
   color: var(--hot-pink);
   text-decoration: none;
-  border-bottom: 2px solid rgba(255,43,214,.85);
+  border-bottom: 2px solid rgba(255,43,214,.65);
   padding-bottom: 2px;
-  text-shadow: var(--glow-pink);
+
+  text-shadow: none;
 }
 
 a:hover{
   color: var(--hot-green);
-  border-bottom-color: rgba(57,255,20,.95);
-  text-shadow: var(--glow-green);
+  border-bottom-color: rgba(57,255,20,.85);
 }
 
-/* ===== Layout-safe “neon panel” style ===== */
-/* Doesn’t change positioning/grid/flex—only visuals. */
+/* ===== Neon panels/cards ===== */
 .card, .panel, section, .site-header, .hero{
   background: var(--panel);
   border: 2px solid var(--panel-border);
   border-radius: 18px;
   box-shadow:
     0 0 0 rgba(0,0,0,0),
-    0 0 35px rgba(255,43,214,.12),
-    0 0 55px rgba(57,255,20,.08);
+    0 0 26px rgba(255,43,214,.08),
+    0 0 36px rgba(57,255,20,.06);
 }
 
-/* ===== Buttons: safe (no position/top/float/grid changes) ===== */
+/* ===== Buttons (subdued glow) ===== */
 button,
 .btn,
 .button,
@@ -105,32 +108,19 @@ input[type="button"],
 
   color: var(--text);
   background:
-    linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.85)),
-    radial-gradient(120% 180% at 25% 0%, rgba(255,43,214,.70), transparent 55%),
-    radial-gradient(120% 180% at 75% 0%, rgba(57,255,20,.60), transparent 55%);
-  box-shadow: var(--glow-pink), var(--glow-green);
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.88)),
+    radial-gradient(120% 180% at 25% 0%, rgba(255,43,214,.45), transparent 55%),
+    radial-gradient(120% 180% at 75% 0%, rgba(57,255,20,.35), transparent 55%);
+  box-shadow: 0 0 10px rgba(255,43,214,.14), 0 0 10px rgba(57,255,20,.12);
 
   padding: .9rem 1.1rem;
 
-  /* layout-safe: keep browser’s existing layout decisions */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: .5rem;
 }
 
-/* Make sure buttons don’t “collapse” */
-button:where(:not([disabled]):hover),
-.btn:hover,
-.button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-.nav-toggle:hover{
-  border-color: rgba(57,255,20,.75);
-  filter: saturate(1.25) brightness(1.05);
-}
-
-/* Avoid layout weirdness from focus rings */
 button:focus-visible,
 .btn:focus-visible,
 .button:focus-visible,
@@ -139,10 +129,20 @@ input[type="submit"]:focus-visible,
 input[type="button"]:focus-visible{
   outline: none;
   box-shadow:
-    0 0 0 4px rgba(255,43,214,.18),
-    0 0 0 9px rgba(57,255,20,.12),
-    var(--glow-pink),
-    var(--glow-green);
+    0 0 0 4px rgba(255,43,214,.12),
+    0 0 0 9px rgba(57,255,20,.08),
+    0 0 18px rgba(255,43,214,.18);
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.nav-toggle:hover{
+  border-color: rgba(57,255,20,.65);
+  filter: saturate(1.1) brightness(1.03);
+  cursor: pointer;
 }
 
 /* ===== Forms ===== */
@@ -153,16 +153,17 @@ input, textarea, select{
 
   border-radius: 14px;
   border: 2px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.60);
+  background: rgba(0,0,0,.62);
   color: var(--text);
 
   transition: border-color .12s ease, box-shadow .12s ease, filter .12s ease;
+  text-shadow: none;
 }
 
 input:focus, textarea:focus, select:focus{
   outline: none;
-  border-color: rgba(255,43,214,.85);
-  box-shadow: 0 0 0 4px rgba(255,43,214,.16), 0 0 26px rgba(57,255,20,.16);
+  border-color: rgba(255,43,214,.65);
+  box-shadow: 0 0 0 4px rgba(255,43,214,.10), 0 0 18px rgba(57,255,20,.10);
 }
 
 textarea{ min-height: 130px; }
@@ -172,13 +173,15 @@ textarea{ min-height: 130px; }
   border: 0;
   height: 4px;
   margin: 1.2rem 0;
+
   background: linear-gradient(90deg,
     transparent,
-    rgba(44,255,106,.95),
-    rgba(255,43,214,.95),
-    rgba(44,255,106,.95),
+    rgba(44,255,106,.75),
+    rgba(255,43,214,.75),
+    rgba(44,255,106,.75),
     transparent);
-  box-shadow: var(--glow-green), var(--glow-pink);
+
+  box-shadow: 0 0 18px rgba(57,255,20,.10), 0 0 18px rgba(255,43,214,.10);
 }
 
 /* ===== Skip link (safe) ===== */
@@ -201,7 +204,7 @@ textarea{ min-height: 130px; }
   border-radius: 12px;
   border: 2px solid rgba(255,255,255,.18);
   background: rgba(0,0,0,.85);
-  box-shadow: var(--glow-pink), var(--glow-green);
+  box-shadow: 0 0 16px rgba(255,43,214,.18), 0 0 16px rgba(57,255,20,.12);
 }
 
 /* ===== Reduced motion ===== */
