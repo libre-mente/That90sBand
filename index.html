@@ -1,169 +1,406 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee&family=Kaushan+Script&family=Luckiest+Guy&family=Orbitron&family=Press+Start+2P&family=Rubik+Wet+Paint&family=Chewy&display=swap" rel="stylesheet">
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>That 90’s Band — Colorado's Premier 90s Cover Band</title>
-  <meta name="description" content="That 90’s Band is a 90s cover band performing all over Colorado. Book them for your next event." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>That 90's Band — Southern Colorado 90s Covers</title>
+  <meta name="description" content="That 90's Band: 90s cover band performing all over Southern Colorado. Book us for your next party, festival, or reunion." />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicons (optional placeholders) -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="That 90's Band" />
+  <meta property="og:description" content="90s cover band performing all over Southern Colorado." />
+  <meta property="og:type" content="website" />
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="That 90’s Band Home">
-        <span class="brand-mark" aria-hidden="true">9B</span>
-        <span class="brand-text">
-          <span class="brand-name">That 90’s Band</span>
-          <span class="brand-tag">90s Cover Band</span>
-        </span>
-      </a>
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">90s</div>
+        <div>
+          <div class="brand-name">That 90&apos;s Band</div>
+          <div class="brand-tagline">All over Southern Colorado • 90s cover hits</div>
+        </div>
+      </div>
 
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="band.html">Band</a>
-        <a class="nav-link" href="events.html">Upcoming Events</a>
-        <a class="nav-link" href="videos.html">Videos</a>
-        <a class="nav-link" href="booking.html">Booking</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#videos" class="nav-link">Videos</a>
+        <a href="#band" class="nav-link">Band</a>
+        <a href="#events" class="nav-link">Upcoming Shows</a>
+        <a href="#booking" class="nav-link nav-cta">Booking</a>
       </nav>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <div class="container mobile-menu-inner">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#videos" class="mobile-link">Videos</a>
+        <a href="#band" class="mobile-link">Band</a>
+        <a href="#events" class="mobile-link">Upcoming Shows</a>
+        <a href="#booking" class="mobile-link">Booking</a>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero">
+    <!-- HERO -->
+    <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="pill-row">
-            <span class="pill">All over Colorado</span>
-            <span class="pill"></span>
-            <span class="pill">90s Hits • Big Energy</span>
-          </div>
-          <h1 class="hero-title">Relive the 90s — live, fun, and unforgettable.</h1>
-          <p class="hero-lead">
-            We’re That 90’s Band, built for dance floors and sing-alongs. Classic riffs, unforgettable hooks,
-            and a full-band stage presence—ready for your venue.
+          <p class="pill">Tapes not included • unless requested</p>
+          <h1 class="hero-title">
+            Turn it up—<span class="highlight">90s covers</span> delivered live.
+          </h1>
+          <p class="hero-subtitle">
+            We’re <strong>That 90&apos;s Band</strong>, a Southern Colorado cover crew that brings the classics, the chaos, and the
+            “wait… was that a sax solo?” energy.
           </p>
 
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="booking.html">Book That 90’s Band</a>
-            <a class="btn btn-ghost" href="events.html">See Upcoming Shows</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#booking">Book the Band</a>
+            <a class="btn btn-ghost" href="#events">See Upcoming Events</a>
           </div>
 
-          <ul class="hero-highlights">
-            <li><span class="check" aria-hidden="true">✓</span> Tight grooves & Solid Performance </li>
-            <li><span class="check" aria-hidden="true">✓</span> Vocals, keys, bass, guitar, drums—full sound</li>
-            <li><span class="check" aria-hidden="true">✓</span> Local coverage across CO</li>
-          </ul>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <div class="meta-kicker">Area</div>
+              <div class="meta-value">Southern Colorado</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Vibe</div>
+              <div class="meta-value">High-gloss nostalgia</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Gear</div>
+              <div class="meta-value">Real instruments, fake time travel</div>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-media">
-          <div class="photo-frame">
-            <img src="assets/images/band.jpg" alt="That 90’s Band performing under colorful 90s-style lighting" />
+        <div class="hero-visual" aria-label="Hero image placeholder">
+          <!-- Replace this with your photo -->
+          <div class="image-placeholder">
+            <div class="image-placeholder-label">PASTE BAND PHOTO HERE</div>
           </div>
+          <div class="glow-card" aria-hidden="true"></div>
+        </div>
+      </div>
 
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-value">90s</div>
-              <div class="stat-label">Vibe</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">Live</div>
-              <div class="stat-label">Energy</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">CO<div>
-              <div class="stat-label"></div>
-            </div>
-          </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>90s •</span><span> • 90s •</span><span> • 90s •</span><span> • 90s •</span>
+          <span>90s •</span><span> • 90s •</span><span> • 90s •</span><span> • 90s •</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- VIDEOS -->
+    <section id="videos" class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Featured Setlist Moments</h2>
-          <p class="muted">.</p>
+          <h2 class="section-title">Featured live moments</h2>
+          <p class="section-subtitle">Three videos for the tape-deck crowd. Swap in your real YouTube links.</p>
         </div>
 
-        <div class="cards cards-3">
-          <article class="card">
-            <h3>Sing-Along Anthems</h3>
-            <p class="muted">Instant crowd recognition designed for big choruses.</p>
-            <div class="tag-row">
-              <span class="tag">Pop</span><span class="tag">Rock</span><span class="tag">Alt</span>
+        <div class="grid-3">
+          <article class="video-card">
+            <div class="video-wrap">
+              <!-- Replace the src with your actual YouTube embed link -->
+              <iframe
+                title="That 90's Band Video 1"
+                src="https://www.youtube.com/embed/VIDEO_ID_1"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">Video 1</div>
+              <div class="video-note">Hit the play button like it’s 1999.</div>
             </div>
           </article>
 
-          <article class="card">
-            <h3>Guitar-Driven Classics</h3>
-            <p class="muted">Riffs that cut through—clean, punchy, and accurate.</p>
-            <div class="tag-row">
-              <span class="tag">90–95</span><span class="tag">Arena</span><span class="tag">Hype</span>
+          <article class="video-card">
+            <div class="video-wrap">
+              <iframe
+                title="That 90's Band Video 2"
+                src="https://www.youtube.com/embed/VIDEO_ID_2"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">Video 2</div>
+              <div class="video-note">If the crowd screams, we do too (respectfully).</div>
             </div>
           </article>
 
-          <article class="card">
-            <h3>Keyboards + Texture</h3>
-            <p class="muted">That unmistakable 90s sound palette—right on the money.</p>
-            <div class="tag-row">
-              <span class="tag">Synth</span><span class="tag">Hooks</span><span class="tag">Groove</span>
+          <article class="video-card">
+            <div class="video-wrap">
+              <iframe
+                title="That 90's Band Video 3"
+                src="https://www.youtube.com/embed/VIDEO_ID_3"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">Video 3</div>
+              <div class="video-note">Bring the glow sticks. We’ll bring the chorus.</div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-contrast">
-      <div class="container cta-band">
-        <div class="cta-band-copy">
-          <h2>Want a night that feels like the mixtape?</h2>
-          <p class="muted">
-            Tell us your date, venue, and vibe—we’ll respond with availability and booking details.
+    <!-- BAND -->
+    <section id="band" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Meet the crew</h2>
+          <p class="section-subtitle">Each member gets one funny 90s-flavored bio. Because brevity is totally radical.</p>
+        </div>
+
+        <div class="band-bios">
+          <div class="band-intro">
+            <p class="lead">
+              We’re a full-stack 90s cover experience: guitars that crunch like a dial-up modem, bass lines that make
+              your neighbors question their life choices, keys that glow like a CRT in the dark, drums tight enough to
+              soundtrack a skateboard montage, and vocals that would absolutely survive a “World’s Best Karaoke Night.”
+            </p>
+            <p class="lead">
+              Booking us is basically the easiest way to time-travel to the era of tamagotchis, blockbuster posters,
+              and “one more song” turning into “wow, it’s midnight again.”
+            </p>
+          </div>
+
+          <div class="grid-5">
+            <!-- Rafe -->
+            <article class="member-card">
+              <div class="member-photo image-placeholder" role="img" aria-label="Rafe photo placeholder">
+                <div class="image-placeholder-label">RAFE PHOTO</div>
+              </div>
+              <div class="member-name">Rafe — Guitar</div>
+              <p class="member-bio">
+                Rafe brings the riffs like it’s “the final season” of a TV drama—except the only breakup is with your
+                volume knob.
+              </p>
+            </article>
+
+            <!-- Monte -->
+            <article class="member-card">
+              <div class="member-photo image-placeholder" role="img" aria-label="Monte photo placeholder">
+                <div class="image-placeholder-label">MONTE PHOTO</div>
+              </div>
+              <div class="member-name">Monte — Bass</div>
+              <p class="member-bio">
+                Monte grooves so hard the dance floor feels like it’s running on a super-fast Pentium and good vibes
+                only.
+              </p>
+            </article>
+
+            <!-- Matt -->
+            <article class="member-card">
+              <div class="member-photo image-placeholder" role="img" aria-label="Matt photo placeholder">
+                <div class="image-placeholder-label">MATT PHOTO</div>
+              </div>
+              <div class="member-name">Matt — Keyboards</div>
+              <p class="member-bio">
+                Matt’s keys sparkle like neon Dreamcast energy—plus he always finds the perfect synth moment at the
+                perfect time.
+              </p>
+            </article>
+
+            <!-- Melinda -->
+            <article class="member-card">
+              <div class="member-photo image-placeholder" role="img" aria-label="Melinda photo placeholder">
+                <div class="image-placeholder-label">MELINDA PHOTO</div>
+              </div>
+              <div class="member-name">Melinda — Drums</div>
+              <p class="member-bio">
+                Melinda keeps time like it’s a spelling bee: no mistakes, just pure rhythm confidence.
+              </p>
+            </article>
+
+            <!-- Ashlee -->
+            <article class="member-card">
+              <div class="member-photo image-placeholder" role="img" aria-label="Ashlee photo placeholder">
+                <div class="image-placeholder-label">AS H LEE PHOTO</div>
+              </div>
+              <div class="member-name">Ashlee — Singer</div>
+              <p class="member-bio">
+                Ashlee sings with the swagger of a mall music video—straight from the era of big hair and bigger hooks.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Upcoming events &amp; shows</h2>
+          <p class="section-subtitle">Swap in your real dates/venues. (These are placeholders.)</p>
+        </div>
+
+        <div class="events-wrap">
+          <div class="events-list">
+            <article class="event-item">
+              <div class="event-date">
+                <div class="event-month">AUG</div>
+                <div class="event-day">15</div>
+              </div>
+              <div class="event-body">
+                <div class="event-title">Downtown Music Night</div>
+                <div class="event-meta">Colorado Springs, CO • 7:00 PM</div>
+                <div class="event-notes">90s set • bring your best “I’m totally not singing along.”</div>
+              </div>
+            </article>
+
+            <article class="event-item">
+              <div class="event-date">
+                <div class="event-month">SEP</div>
+                <div class="event-day">07</div>
+              </div>
+              <div class="event-body">
+                <div class="event-title">Block Party: Throwback Edition</div>
+                <div class="event-meta">Pueblo, CO • 6:30 PM</div>
+                <div class="event-notes">DJs out—live band in. Totally radical.</div>
+              </div>
+            </article>
+
+            <article class="event-item">
+              <div class="event-date">
+                <div class="event-month">OCT</div>
+                <div class="event-day">12</div>
+              </div>
+              <div class="event-body">
+                <div class="event-title">Carpool Karaoke (Live) — The Sequel</div>
+                <div class="event-meta">Colorado Springs, CO • 8:00 PM</div>
+                <div class="event-notes">Costumes welcome. Dial-up jokes mandatory (we won’t enforce… unless you do).</div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="events-aside">
+            <div class="aside-card">
+              <div class="aside-title">Want to book a show?</div>
+              <p class="aside-text">We’ll help you lock in the perfect setlist and bring that 90s energy to your crowd.</p>
+              <a class="btn btn-primary btn-full" href="#booking">Email for Booking</a>
+              <a class="btn btn-ghost btn-full" href="#videos">Watch a Clip</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="section section-alt">
+      <div class="container booking-grid">
+        <div class="booking-copy">
+          <h2 class="section-title">Booking</h2>
+          <p class="section-subtitle">
+            Email us and we’ll get back to you ASAP—like it’s the golden age of instant responses (but we still say “thanks”).
+          </p>
+
+          <div class="booking-card">
+            <div class="booking-row">
+              <div class="booking-label">Booking email</div>
+              <div class="booking-value">
+                <a class="email-link" href="mailto:dogoodnow@riseup.net">dogoodnow@riseup.net</a>
+              </div>
+            </div>
+
+            <div class="booking-row">
+              <div class="booking-label">What to include</div>
+              <div class="booking-value">
+                Date, venue/city, start time, and any 90s vibe requests (alt/rock/pop—bring it on).
+              </div>
+            </div>
+          </div>
+
+          <p class="fineprint">
+            Tip: Replace the placeholder event dates above with your real ones, and swap the three YouTube embed IDs on this page.
           </p>
         </div>
-        <div class="cta-band-actions">
-          <a class="btn btn-primary" href="booking.html">Book Now</a>
-          <a class="btn btn-ghost" href="events.html">Upcoming Events</a>
+
+        <div class="booking-visual">
+          <div class="image-placeholder" role="img" aria-label="Booking image placeholder">
+            <div class="image-placeholder-label">PASTE VENUE / STAGE PHOTO HERE</div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-text">Live band</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">∞</div>
+              <div class="stat-text">Nostalgia</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">0%</div>
+              <div class="stat-text">Silent choruses</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo" aria-hidden="true">9B</div>
-        <div>
-          <div class="footer-name">That 90’s Band</div>
-          <div class="footer-muted">90s Cover Band • Colorado</div>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="brand-name">That 90&apos;s Band</div>
+          <div class="footer-sub">Southern Colorado cover band • 90s era certified</div>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#band">Band</a>
+          <a href="#events">Shows</a>
+          <a href="#booking">Book</a>
+        </div>
+        <div class="footer-copy">
+          © <span id="year"></span> That 90&apos;s Band. All rights reserved (because legal says so).
         </div>
       </div>
+    </footer>
+  </main>
 
-      <div class="footer-links">
-        <a href="band.html">Band</a>
-        <a href="events.html">Events</a>
-        <a href="videos.html">Videos</a>
-        <a href="booking.html">Booking</a>
-      </div>
+  <script>
+    // Minimal mobile nav
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobile-menu');
 
-      <div class="footer-note">
-        <small>© <span id="year"></span> That 90’s Band. All rights reserved.</small>
-      </div>
-    </div>
-  </footer>
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const isHidden = menu.hasAttribute('hidden');
+        menu.toggleAttribute('hidden', !isHidden);
+        btn.setAttribute('aria-expanded', String(isHidden));
+      });
 
-  <script src="js/main.js"></script>
+      // Close on link click
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          menu.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
