@@ -46,3 +46,4 @@ title: Booking
   </p>
   <a class="btn" href="/contact">Contact Bookings</a>
 </section>
+<a class="btn btn-primary" href="/contact">Contact Bookings</a>
