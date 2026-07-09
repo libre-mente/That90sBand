@@ -1,26 +1,14 @@
-/* ================================================================
-   THAT 90'S BAND - 90s THEMED WEBSITE CSS
-   A nostalgic journey back to the decade of grunge and synth
-   ================================================================ */
-
-/* ================================================================
-   RESET & GENERAL STYLES
-   ================================================================ */
-
+/* ========== GLOBAL STYLES ========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Arial', 'Trebuchet MS', sans-serif;
-    background: linear-gradient(135deg, #1a0033 0%, #330066 50%, #1a0033 100%);
-    color: #ffcc00;
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #f0f0f0;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -31,232 +19,179 @@ body {
     padding: 0 20px;
 }
 
-/* ================================================================
-   HEADER & NAVIGATION
-   ================================================================ */
-
+/* ========== HEADER/NAVIGATION ========== */
 .header {
-    background: linear-gradient(90deg, #000000 0%, #1a0033 50%, #000000 100%);
-    border-bottom: 4px solid #ffcc00;
+    background: linear-gradient(90deg, #0a0e27 0%, #1a1a4d 50%, #0a0e27 100%);
+    border-bottom: 3px solid #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
     padding: 20px 0;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+    z-index: 1000;
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.logo h1 {
+.logo-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.band-name {
     font-size: 2.5em;
-    color: #ffcc00;
-    text-shadow: 3px 3px 0px #00ffff, 6px 6px 0px #ff00ff;
-    letter-spacing: 3px;
     font-weight: bold;
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #ff00ff;
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #00ff88, 0 0 20px #ff00ff; }
+    50% { text-shadow: 0 0 20px #00ff88, 0 0 30px #ff00ff, 0 0 40px #00ffff; }
 }
 
 .tagline {
-    color: #00ffff;
     font-size: 0.9em;
-    letter-spacing: 2px;
+    color: #00ffff;
     margin-top: 5px;
+    letter-spacing: 1px;
 }
 
 .nav {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
-.nav a {
-    color: #ffcc00;
+.nav-link {
+    color: #00ff88;
     text-decoration: none;
     font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 0.9em;
+    font-size: 1em;
+    padding: 10px 15px;
+    border: 2px solid transparent;
     transition: all 0.3s ease;
-    text-shadow: 2px 2px 0px #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.nav a:hover {
-    color: #00ffff;
-    text-shadow: 2px 2px 0px #ffcc00;
-    transform: scale(1.1);
+.nav-link:hover {
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
 }
 
-/* ================================================================
-   HERO SECTION
-   ================================================================ */
-
+/* ========== HERO SECTION ========== */
 .hero {
-    background: linear-gradient(135deg, #330066 0%, #660099 50%, #330066 100%);
-    padding: 80px 20px;
-    text-align: center;
-    border-bottom: 5px dashed #00ffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 0;
+    min-height: 500px;
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 2px,
-        rgba(255, 204, 0, 0.03) 2px,
-        rgba(255, 204, 0, 0.03) 4px
-    );
-    pointer-events: none;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero h2 {
     font-size: 3.5em;
-    color: #ffcc00;
-    text-shadow: 4px 4px 0px #00ffff, 8px 8px 0px #ff00ff;
-    letter-spacing: 4px;
-    margin-bottom: 15px;
+    color: #00ff88;
+    text-shadow: 0 0 20px #00ff88, 0 0 40px #ff00ff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.3em;
+    color: #00ffff;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: 2px solid;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00ff88, #00ffff);
+    color: #000;
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.8), 0 0 60px rgba(255, 0, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ff00ff;
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.btn-secondary:hover {
+    background: #ff00ff;
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.btn-social {
+    background: linear-gradient(135deg, #ff00ff, #00ffff);
+    color: #000;
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    margin-top: 20px;
+}
+
+.btn-social:hover {
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.hero-graphic {
+    position: relative;
+    height: 400px;
+}
+
+.gradient-box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff00ff, #00ffff, #00ff88);
+    border: 3px solid #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5), inset 0 0 30px rgba(255, 0, 255, 0.3);
     animation: pulse 3s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.hero-subtext {
-    font-size: 1.5em;
-    color: #00ffff;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 0px #330066;
-}
-
-.hero-description {
-    font-size: 1.1em;
-    color: #ffffff;
-    max-width: 700px;
-    margin: 20px auto 30px;
-    line-height: 1.8;
-    background: rgba(51, 0, 102, 0.7);
-    padding: 20px;
-    border-left: 5px solid #00ffff;
-    border-right: 5px solid #ff00ff;
-}
-
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(90deg, #ffcc00 0%, #ff00ff 100%);
-    color: #000000;
-    padding: 15px 40px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration: none;
-    border: 3px solid #00ffff;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-}
-
-.cta-button:hover {
-    transform: scale(1.1) rotate(-2deg);
-    box-shadow: 0 0 30px rgba(255, 204, 0, 0.8), 0 0 60px rgba(0, 255, 255, 0.5);
-}
-
-.ascii-art {
-    font-family: 'Courier New', monospace;
-    color: #00ffff;
-    font-size: 1.2em;
-    margin-top: 30px;
-    text-shadow: 2px 2px 0px #ff00ff;
-    letter-spacing: 2px;
-}
-
-/* ================================================================
-   SECTION STYLES
-   ================================================================ */
-
-section {
-    padding: 80px 20px;
-    border-bottom: 3px dashed #00ffff;
-}
-
-.section-title {
-    font-size: 2.8em;
-    color: #ffcc00;
-    text-shadow: 3px 3px 0px #00ffff, 6px 6px 0px #ff00ff;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.section-intro {
-    font-size: 1.1em;
-    color: #ffffff;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 50px;
-    line-height: 1.8;
-}
-
-/* ================================================================
-   BAND SECTION
-   ================================================================ */
-
-.band-section {
-    background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
-}
-
-.band-members {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.member-card {
-    background: linear-gradient(135deg, #330066 0%, #660099 100%);
-    border: 3px solid #00ffff;
-    padding: 30px 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-    position: relative;
-}
-
-.member-card:hover {
-    transform: translateY(-10px) rotate(-1deg);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(255, 0, 255, 0.5);
-    border-color: #ff00ff;
-}
-
-.member-label {
-    display: inline-block;
-    background: #ff00ff;
-    color: #000000;
-    padding: 8px 16px;
-    font-size: 0.85em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    border: 2px solid #ffcc00;
-}
-
-.member-card h3 {
-    font-size: 1.8em;
-    color: #ffcc00;
-    text-shadow: 2
+    0%, 100% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.5), inset 0 0 30px rgba(255, 0, 255, 0.3); }
+    50% { box-shadow: 0 0 50px rgba(0, 255, 136, 0.8), in
