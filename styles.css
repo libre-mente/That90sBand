@@ -133,6 +133,14 @@ a:hover {
 /* ============================================
    HERO SECTION
    ============================================ */
+.hero-photo {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+}
 
 .hero {
     min-height: 100vh;
