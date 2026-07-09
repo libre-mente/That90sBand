@@ -1,14 +1,26 @@
-/* ========== GLOBAL STYLES ========== */
+/* ================================================================
+   THAT 90'S BAND - 90s THEMED WEBSITE CSS
+   A nostalgic journey back to the decade of grunge and synth
+   ================================================================ */
+
+/* ================================================================
+   RESET & GENERAL STYLES
+   ================================================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Arial', 'Helvetica', sans-serif;
-    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #0f0a1f 100%);
-    color: #f0f0f0;
+    font-family: 'Arial', 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #1a0033 0%, #330066 50%, #1a0033 100%);
+    color: #ffcc00;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -19,467 +31,232 @@ body {
     padding: 0 20px;
 }
 
-/* ========== HEADER/NAVIGATION ========== */
+/* ================================================================
+   HEADER & NAVIGATION
+   ================================================================ */
+
 .header {
-    background: linear-gradient(90deg, #1a0033 0%, #330066 50%, #1a0033 100%);
-    border-bottom: 5px solid #00d9ff;
-    border-top: 5px solid #ffcc00;
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3), inset 0 0 20px rgba(255, 204, 0, 0.1);
-    padding: 15px 0;
+    background: linear-gradient(90deg, #000000 0%, #1a0033 50%, #000000 100%);
+    border-bottom: 4px solid #ffcc00;
+    padding: 20px 0;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
 }
 
-.logo-section {
-    flex-shrink: 0;
-}
-
-.band-name {
-    font-family: 'Righteous', cursive;
-    font-size: 1.8em;
+.logo h1 {
+    font-size: 2.5em;
+    color: #ffcc00;
+    text-shadow: 3px 3px 0px #00ffff, 6px 6px 0px #ff00ff;
+    letter-spacing: 3px;
     font-weight: bold;
-    background: linear-gradient(90deg, #ffcc00, #ff6699, #00d9ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin: 0;
 }
 
 .tagline {
-    font-size: 0.75em;
-    color: #ffcc00;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 3px;
-    margin-bottom: 0;
+    color: #00ffff;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    margin-top: 5px;
 }
 
 .nav {
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    gap: 30px;
 }
 
-.nav-link {
-    color: #00d9ff;
+.nav a {
+    color: #ffcc00;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85em;
-    padding: 8px 12px;
-    border: 2px solid #ffcc00;
-    background: rgba(255, 204, 0, 0.05);
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-}
-
-.nav-link:hover {
-    color: #ffcc00;
-    border-color: #00d9ff;
-    background: rgba(0, 217, 255, 0.15);
-    transform: scale(1.05);
-}
-
-/* ========== HERO SECTION ========== */
-.hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 60px;
-    padding: 80px 0;
-    min-height: 600px;
-}
-
-.hero-content {
-    z-index: 2;
-}
-
-.hero h2 {
-    font-family: 'Righteous', cursive;
-    font-size: 3em;
-    background: linear-gradient(90deg, #ffcc00, #ff6699);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 25px;
-    line-height: 1.2;
-    letter-spacing: 1px;
-}
-
-.hero-subtitle {
-    font-size: 1.2em;
-    color: #00d9ff;
-    margin-bottom: 40px;
-    line-height: 1.8;
-    font-weight: bold;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 12px 28px;
-    font-size: 0.95em;
-    border: 3px solid;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-family: 'Arial', sans-serif;
-}
-
-.btn-primary {
-    background: linear-gradient(90deg, #ffcc00, #ff6699);
-    color: #1a0033;
-    border-color: #ffcc00;
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-}
-
-.btn-primary:hover {
-    box-shadow: 0 0 30px rgba(255, 204, 0, 0.8), 0 0 60px rgba(255, 102, 153, 0.6);
-    transform: scale(1.08);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #00d9ff;
-    border-color: #00d9ff;
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
-}
-
-.btn-secondary:hover {
-    background: #00d9ff;
-    color: #1a0033;
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.8);
-    transform: scale(1.08);
-}
-
-.btn-social {
-    background: linear-gradient(90deg, #ff6699, #00d9ff);
-    color: #1a0033;
-    border-color: #ff6699;
-    box-shadow: 0 0 20px rgba(255, 102, 153, 0.5);
-    margin-top: 20px;
-}
-
-.btn-social:hover {
-    box-shadow: 0 0 30px rgba(255, 102, 153, 0.8);
-    transform: scale(1.08);
-}
-
-.hero-graphic {
-    position: relative;
-    height: 400px;
-}
-
-.gradient-box {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #ff6699, #00d9ff, #ffcc00);
-    border: 4px solid #ffcc00;
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.5), inset 0 0 30px rgba(255, 204, 0, 0.2);
-    animation: pulse 3s ease-in-out infinite;
-    position: relative;
-    overflow: hidden;
-}
-
-@keyframes pulse {
-    0%, 100% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.5), inset 0 0 30px rgba(255, 204, 0, 0.2); }
-    50% { box-shadow: 0 0 50px rgba(0, 217, 255, 0.8), inset 0 0 50px rgba(255, 204, 0, 0.4); }
-}
-
-.triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    opacity: 0.8;
-}
-
-.triangle-1 {
-    border-left: 80px solid transparent;
-    border-right: 80px solid transparent;
-    border-bottom: 140px solid rgba(255, 204, 0, 0.3);
-    top: 20px;
-    left: 30px;
-}
-
-.triangle-2 {
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    border-bottom: 100px solid rgba(255, 102, 153, 0.3);
-    top: 150px;
-    right: 50px;
-}
-
-.triangle-3 {
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 90px solid rgba(0, 217, 255, 0.3);
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* ========== BAND SECTION ========== */
-.band-section {
-    padding: 80px 0;
-    background: rgba(26, 0, 51, 0.3);
-}
-
-.section-title {
-    font-family: 'Righteous', cursive;
-    font-size: 2.5em;
-    background: linear-gradient(90deg, #ffcc00, #00d9ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-align: center;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.section-subtitle {
-    font-size: 1.1em;
-    color: #ff6699;
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: bold;
-}
-
-.band-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.band-member {
-    background: linear-gradient(135deg, rgba(51, 0, 102, 0.6), rgba(45, 27, 105, 0.6));
-    border: 3px solid #00d9ff;
-    padding: 30px 25px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
-}
-
-.band-member:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(255, 102, 153, 0.5), 0 0 20px rgba(0, 217, 255, 0.4);
-    border-color: #ff6699;
-}
-
-.member-graphic {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, #ffcc00, #ff6699);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #1a0033;
-    font-size: 0.85em;
-    text-align: center;
-    border: 2px solid #00d9ff;
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-}
-
-.band-member h3 {
-    font-family: 'Righteous', cursive;
-    font-size: 1.5em;
-    color: #ffcc00;
-    margin-bottom: 8px;
-}
-
-.role {
-    color: #00d9ff;
-    font-weight: bold;
-    text-transform: uppercase;
+    letter-spacing: 2px;
     font-size: 0.9em;
-    margin-bottom: 15px;
-}
-
-.bio {
-    color: #f0f0f0;
-    font-size: 0.95em;
-    line-height: 1.6;
-}
-
-/* ========== VIDEOS SECTION ========== */
-.videos-section {
-    padding: 80px 0;
-    background: rgba(45, 27, 105, 0.2);
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 50px;
-    margin-bottom: 50px;
-}
-
-.video-container {
-    background: rgba(26, 0, 51, 0.6);
-    padding: 15px;
-    border: 3px solid #ffcc00;
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
     transition: all 0.3s ease;
+    text-shadow: 2px 2px 0px #ff00ff;
 }
 
-.video-container:hover {
-    border-color: #00d9ff;
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+.nav a:hover {
+    color: #00ffff;
+    text-shadow: 2px 2px 0px #ffcc00;
+    transform: scale(1.1);
 }
 
-.video-frame {
-    background: #000;
-    padding-bottom: 56.25%;
+/* ================================================================
+   HERO SECTION
+   ================================================================ */
+
+.hero {
+    background: linear-gradient(135deg, #330066 0%, #660099 50%, #330066 100%);
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 5px dashed #00ffff;
     position: relative;
     overflow: hidden;
 }
 
-.video-frame iframe {
+.hero::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 204, 0, 0.03) 2px,
+        rgba(255, 204, 0, 0.03) 4px
+    );
+    pointer-events: none;
 }
 
-.social-link {
-    text-align: center;
-    padding: 30px 0;
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
-.social-link p {
-    font-size: 1.1em;
+.hero h2 {
+    font-size: 3.5em;
     color: #ffcc00;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* ========== EVENTS SECTION ========== */
-.events-section {
-    padding: 80px 0;
-    background: rgba(26, 0, 51, 0.4);
-}
-
-.events-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 40px;
-}
-
-.event-card {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 30px;
-    background: linear-gradient(135deg, rgba(51, 0, 102, 0.5), rgba(45, 27, 105, 0.5));
-    border: 3px solid #ff6699;
-    padding: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(255, 102, 153, 0.2);
-}
-
-.event-card:hover {
-    border-color: #00d9ff;
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4), 0 0 20px rgba(255, 102, 153, 0.3);
-}
-
-.event-date {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(135deg, #ffcc00, #ff6699);
-    padding: 20px 15px;
-    text-align: center;
-    border: 2px solid #00d9ff;
-    height: fit-content;
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
-}
-
-.month {
-    font-size: 0.75em;
-    font-weight: bold;
-    color: #1a0033;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.day {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #1a0033;
-    line-height: 1;
-}
-
-.event-details h3 {
-    font-family: 'Righteous', cursive;
-    font-size: 1.4em;
-    color: #ffcc00;
-    margin-bottom: 10px;
-}
-
-.event-time {
-    color: #00d9ff;
-    font-weight: bold;
-    font-size: 1.05em;
-    margin-bottom: 8px;
-}
-
-.event-location {
-    color: #ff6699;
-    font-weight: bold;
-    font-size: 0.95em;
+    text-shadow: 4px 4px 0px #00ffff, 8px 8px 0px #ff00ff;
+    letter-spacing: 4px;
     margin-bottom: 15px;
+    animation: pulse 3s ease-in-out infinite;
 }
 
-.event-description {
-    color: #f0f0f0;
-    font-size: 0.95em;
-    line-height: 1.7;
-    margin-bottom: 12px;
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
-.highlight {
-    color: #00d9ff;
+.hero-subtext {
+    font-size: 1.5em;
+    color: #00ffff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #330066;
+}
+
+.hero-description {
+    font-size: 1.1em;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 20px auto 30px;
+    line-height: 1.8;
+    background: rgba(51, 0, 102, 0.7);
+    padding: 20px;
+    border-left: 5px solid #00ffff;
+    border-right: 5px solid #ff00ff;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffcc00 0%, #ff00ff 100%);
+    color: #000000;
+    padding: 15px 40px;
+    font-size: 1.2em;
     font-weight: bold;
-    font-size: 0.9em;
+    text-decoration: none;
+    border: 3px solid #00ffff;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
 }
 
-/* ========== BOOKING SECTION ========== */
-.booking-section {
-    padding: 80px 0;
-    background: rgba(45, 27, 105, 0.3);
+.cta-button:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.8), 0 0 60px rgba(0, 255, 255, 0.5);
 }
 
-.booking-content {
+.ascii-art {
+    font-family: 'Courier New', monospace;
+    color: #00ffff;
+    font-size: 1.2em;
+    margin-top: 30px;
+    text-shadow: 2px 2px 0px #ff00ff;
+    letter-spacing: 2px;
+}
+
+/* ================================================================
+   SECTION STYLES
+   ================================================================ */
+
+section {
+    padding: 80px 20px;
+    border-bottom: 3px dashed #00ffff;
+}
+
+.section-title {
+    font-size: 2.8em;
+    color: #ffcc00;
+    text-shadow: 3px 3px 0px #00ffff, 6px 6px 0px #ff00ff;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-intro {
+    font-size: 1.1em;
+    color: #ffffff;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.8;
+}
+
+/* ================================================================
+   BAND SECTION
+   ================================================================ */
+
+.band-section {
+    background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+}
+
+.band-members {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    background: linear-gradient(135deg, rgba(51, 0, 102, 0.4), rgba(26, 0, 51, 0.4));
-    border: 3px solid #00d9ff;
-    padding: 50px;
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
-.booking-
+.member-card {
+    background: linear-gradient(135deg, #330066 0%, #660099 100%);
+    border: 3px solid #00ffff;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    position: relative;
+}
+
+.member-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(255, 0, 255, 0.5);
+    border-color: #ff00ff;
+}
+
+.member-label {
+    display: inline-block;
+    background: #ff00ff;
+    color: #000000;
+    padding: 8px 16px;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    border: 2px solid #ffcc00;
+}
+
+.member-card h3 {
+    font-size: 1.8em;
+    color: #ffcc00;
+    text-shadow: 2
