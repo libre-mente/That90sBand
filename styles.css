@@ -159,30 +159,6 @@ body {
 /* ============================================
    EVENTS SECTION
    ============================================ */
-.events-section,
-.events-section .container,
-.events-list,
-.event-card,
-.event-details {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.events-list {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 40px;
-    max-width: 1000px;
-}
-
-.event-card {
-    width: 100%;
-    max-width: 450px;
-}
-
 
 .events-section {
     padding: 80px 20px;
