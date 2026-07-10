@@ -648,10 +648,10 @@ a:hover {
 }
 
 /* ============================================
-   SHOWS SECTION
+   EVENTS SECTION
    ============================================ */
 
-.shows-section {
+.events-section {
     padding: 80px 20px;
     background: #000000;
     text-align: center;
@@ -659,15 +659,18 @@ a:hover {
     border-bottom: 4px solid #ff006e;
 }
 
-.shows-grid {
+.events-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+    place-items: center;
 }
 
-.show-card {
+.event-card {
     background: rgba(0, 255, 255, 0.1);
     padding: 40px 30px;
     border-left: 5px solid #00ff00;
@@ -681,9 +684,12 @@ a:hover {
     position: relative;
     overflow: hidden;
     text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
 }
 
-.show-card::before {
+.event-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -700,7 +706,7 @@ a:hover {
     pointer-events: none;
 }
 
-.show-card:hover {
+.event-card:hover {
     transform: translateY(-15px) rotate(1deg);
     box-shadow: 
         0 0 50px #00ff00,
@@ -710,7 +716,16 @@ a:hover {
     border-right-color: #00ff00;
 }
 
-.show-date {
+.event-date,
+.event-details h3,
+.event-location,
+.event-time,
+.event-description,
+.highlight {
+    text-align: center;
+}
+
+.event-date {
     font-size: 1.4rem;
     color: #00ff00;
     font-weight: 900;
@@ -720,13 +735,13 @@ a:hover {
     letter-spacing: 2px;
 }
 
-.show-details h3 {
+.event-details h3 {
     color: #ff006e;
     margin-bottom: 10px;
     text-shadow: 0 0 10px #ff006e, 0 0 20px #00ff00;
 }
 
-.show-location {
+.event-location {
     color: #00ffff;
     font-size: 1.1rem;
     font-weight: bold;
@@ -734,7 +749,7 @@ a:hover {
     text-shadow: 0 0 8px #00ffff;
 }
 
-.show-time {
+.event-time {
     color: #00ff00;
     font-size: 1.1rem;
     font-weight: bold;
@@ -742,7 +757,13 @@ a:hover {
     text-shadow: 0 0 8px #00ff00;
 }
 
-.show-description {
+.event-description {
     color: #00ffff;
     font-size: 0.95rem;
-    text-shadow: 0 0 5px #00ff
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.highlight {
+    color: #ff006e;
+    font-weight: bold;
+}
