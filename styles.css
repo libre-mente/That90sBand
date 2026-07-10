@@ -133,6 +133,17 @@ a:hover {
 /* ============================================
    HERO SECTION
    ============================================ */
+.band-logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: min(80vw, 520px);
+  height: auto;
+  filter:
+    drop-shadow(0 0 18px rgba(255, 0, 153, 0.55))
+    drop-shadow(0 0 28px rgba(182, 255, 0, 0.35))
+    drop-shadow(0 0 45px rgba(255, 255, 255, 0.15));
+}
+
 .hero-header {
   position: relative;
   min-height: 100vh;
