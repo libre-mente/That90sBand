@@ -221,7 +221,7 @@ a {
 }
 
 /* ============================================
-   BAND SECTION (FIXED: CENTERED ASHLEE & SQUARED CARDS)
+   BAND SECTION
    ============================================ */
 .band-section {
     padding: 80px 20px;
@@ -240,7 +240,6 @@ a {
     text-shadow: 0 0 10px #00ffff, 0 0 20px #ff006e;
 }
 
-/* Flex layout wraps items naturally and beautifully centers the trailing 5th item */
 .band-grid {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -260,8 +259,6 @@ a {
     align-items: center !important;
     text-align: center !important;
     border-radius: 8px !important;
-    
-    /* Configures individual width blocks */
     flex: 1 1 320px !important;
     max-width: 360px !important; 
 }
@@ -272,7 +269,6 @@ a {
     border-color: #00ff00 !important;
 }
 
-/* FORCES ORIGINAL UN-CROPPED RECTANGULAR GEOMETRY WITH ABSOLUTE IMPORTANCE */
 .member-photo {
     width: 100% !important;
     max-width: 280px !important;
@@ -308,7 +304,7 @@ a {
 }
 
 /* ============================================
-   VIDEOS SECTION (FIXED: EXTRA PROMINENT AND RESIZABLE)
+   VIDEOS SECTION
    ============================================ */
 .videos-section {
     padding: 80px 20px;
@@ -317,7 +313,6 @@ a {
     border-bottom: 4px solid #00ff00;
 }
 
-/* Broadened flex alignment for wide-scale video presence */
 .video-grid {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -328,7 +323,6 @@ a {
     width: 100% !important;
 }
 
-/* Amplifies horizontal scaling on desktop & cleanly commands screen space on mobile */
 .video-container {
     flex: 1 1 540px !important; 
     max-width: 100% !important;
@@ -366,26 +360,8 @@ a {
     margin-bottom: 15px;
 }
 
-.btn-social {
-    display: inline-block;
-    padding: 12px 30px;
-    color: #000;
-    background: #00ff00;
-    font-weight: 900;
-    text-transform: uppercase;
-    box-shadow: 0 0 15px #00ff00;
-    border: 2px solid #00ff00;
-}
-
-.btn-social:hover {
-    background: #ff006e;
-    color: #fff;
-    border-color: #ff006e;
-    box-shadow: 0 0 25px #ff006e;
-}
-
 /* ============================================
-   CATALOG SECTION (SCROLLABLE & SEARCHABLE REPERTOIRE)
+   SONG CATALOG SECTION (FIXED: CENTER-ALIGNED ROW CONTENT)
    ============================================ */
 .catalog-section {
     padding: 80px 20px;
@@ -456,17 +432,20 @@ a {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left;
 }
 
+/* Rows utilize flex inline centering to fix left alignment layout bugs */
 .catalog-list li {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 12px 10px;
     border-bottom: 1px dashed rgba(0, 255, 0, 0.2);
     font-family: 'Verdana', sans-serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    text-align: center;
 }
 
 .catalog-list li:hover {
@@ -476,35 +455,35 @@ a {
 .catalog-list .song {
     color: #ffffff;
     font-weight: bold;
-    flex: 2;
+}
+
+.catalog-list .divider {
+    color: rgba(255, 0, 110, 0.6);
+    font-weight: bold;
 }
 
 .catalog-list .artist {
     color: #00ff00;
-    flex: 2;
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.4);
 }
 
 .catalog-list .year {
     color: #00ffff;
-    flex: 1;
-    text-align: right;
+    font-size: 0.95rem;
 }
 
 @media (max-width: 600px) {
     .catalog-list li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        gap: 5px;
         padding: 15px 5px;
     }
-    .catalog-list .year {
-        text-align: left;
+    .catalog-list .divider {
+        display: none; /* Simplifies layout view on small phone grids */
     }
 }
 
 /* ============================================
-   EVENTS SECTION (CLEANED & UNIFORM)
+   EVENTS SECTION
    ============================================ */
 .events-section {
     padding: 80px 20px;
@@ -681,7 +660,7 @@ a {
 }
 
 /* ============================================
-   FOOTER BRANDING LOGO (CENTERED & GLOWING)
+   FOOTER BRANDING LOGO
    ============================================ */
 .footer-logo-section {
     padding: 40px 20px;
