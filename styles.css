@@ -1,0 +1,739 @@
+/* ============================================
+   THAT 90'S BAND - NEON 90s AESTHETIC
+   ============================================ */
+
+/* ============================================
+   GLOBAL STYLES & RESET
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    background: #000000;
+    color: #00ff00;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   TYPOGRAPHY & TEXT EFFECTS
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Impact', 'Arial Black', 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #00ff00;
+    text-shadow: 0 0 15px #00ff00, 0 0 30px #ff006e, 0 0 45px #00ffff;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    color: #ff006e;
+    text-shadow: 0 0 10px #ff006e, 0 0 20px #00ff00;
+}
+
+p {
+    font-family: 'Verdana', 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #00ffff;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #00ff00;
+}
+
+/* ============================================
+   HERO HEADER (TOP SECTION WITH LOGO & NAV)
+   ============================================ */
+.hero-header {
+    position: relative;
+    min-height: 80vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 60px 20px;
+    border-bottom: 4px solid #00ff00;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at center, rgba(255, 0, 153, 0.22), transparent 45%),
+      radial-gradient(circle at center, rgba(182, 255, 0, 0.18), transparent 65%),
+      linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.75));
+    filter: blur(20px);
+    transform: scale(1.2);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.logo-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.band-logo {
+    display: block;
+    width: min(85vw, 550px);
+    height: auto;
+    margin-bottom: 20px;
+    filter:
+      drop-shadow(0 0 18px rgba(255, 0, 153, 0.55))
+      drop-shadow(0 0 28px rgba(182, 255, 0, 0.35))
+      drop-shadow(0 0 45px rgba(255, 255, 255, 0.15));
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+.tagline {
+    color: #f5f5f5;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* MAIN NAVIGATION */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.nav-link {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 22px;
+    border: 2px solid #00ff00;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px #00ff00;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: rgba(255, 0, 110, 0.2);
+    color: #ff006e;
+    border-color: #ff006e;
+    box-shadow: 0 0 20px #ff006e, 0 0 30px #00ff00;
+    text-shadow: 0 0 15px #ff006e;
+}
+
+/* ============================================
+   HERO / STEP INTO THE 90S SECTION
+   ============================================ */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+    padding: 60px 20px;
+    border-bottom: 4px solid #ff006e;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03) 0px,
+        rgba(0, 255, 0, 0.03) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events: none;
+    animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+.hero-photo {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto 25px;
+    border-radius: 12px;
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    color: #00ffff;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #ff006e;
+}
+
+/* ============================================
+   BAND SECTION
+   ============================================ */
+.band-section {
+    padding: 80px 20px;
+    background: #000000;
+    text-align: center;
+    border-bottom: 4px solid #ff006e;
+}
+
+.section-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: #00ffff;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff006e;
+}
+
+.band-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.band-member {
+    background: rgba(255, 0, 110, 0.12);
+    padding: 30px;
+    border: 3px solid #ff006e;
+    box-shadow: 0 0 20px #ff006e, inset 0 0 15px rgba(0, 255, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    flex: 1 1 320px;
+    max-width: 360px; 
+}
+
+.band-member:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 0 30px #ff006e, 0 0 50px #00ff00;
+    border-color: #00ff00;
+}
+
+.member-photo {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 8px; 
+    object-fit: contain;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.member-info {
+    width: 100%;
+}
+
+.member-info .role {
+    font-size: 1.2rem;
+    color: #00ff00;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-shadow: 0 0 8px #00ff00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-info .bio {
+    font-size: 0.95rem;
+    color: #00ffff;
+    line-height: 1.6;
+    text-align: justify;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* ============================================
+   VIDEOS SECTION
+   ============================================ */
+.videos-section {
+    padding: 80px 20px;
+    background: #000000;
+    text-align: center;
+    border-bottom: 4px solid #00ff00;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    width: 100%;
+}
+
+.video-container {
+    flex: 1 1 540px; 
+    max-width: 100%;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #ff006e;
+    transition: all 0.3s ease;
+    background: #000;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+.video-container:hover {
+    border-color: #ff006e;
+    box-shadow: 0 0 40px #ff006e, 0 0 60px #00ffff;
+    transform: scale(1.02);
+}
+
+.video-frame {
+    width: 100%;
+    height: 100%;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.social-link {
+    margin-top: 30px;
+}
+
+.social-link p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   SONG CATALOG SECTION
+   ============================================ */
+.catalog-section {
+    padding: 80px 20px;
+    background: #000000;
+    text-align: center;
+    border-bottom: 4px solid #ff006e;
+}
+
+.search-container {
+    max-width: 850px;
+    margin: 0 auto 25px auto;
+}
+
+#catalogSearch {
+    width: 100%;
+    padding: 14px 20px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #000000;
+    border: 3px solid #ff006e;
+    color: #00ff00;
+    box-shadow: 0 0 15px rgba(255, 0, 110, 0.2);
+    outline: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+#catalogSearch:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 25px #00ff00;
+    color: #ffffff;
+}
+
+#catalogSearch::placeholder {
+    color: rgba(0, 255, 255, 0.6);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.catalog-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: rgba(0, 255, 255, 0.04);
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    height: 450px;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Custom Neon Scrollbar Styles */
+.catalog-container::-webkit-scrollbar {
+    width: 10px;
+}
+.catalog-container::-webkit-scrollbar-track {
+    background: #000000;
+}
+.catalog-container::-webkit-scrollbar-thumb {
+    background: #ff006e;
+    border: 2px solid #000000;
+    box-shadow: 0 0 10px #ff006e;
+    border-radius: 4px;
+}
+
+.catalog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Rows utilize strict flex box settings with safe runtime toggles */
+.catalog-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 10px;
+    border-bottom: 1px dashed rgba(0, 255, 0, 0.2);
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.05rem;
+    width: 100%;
+    max-width: 650px; 
+}
+
+/* Used by JS script to hide non-matching tracks safely without breaking CSS flex priority */
+.catalog-list li.hidden-row {
+    display: none;
+}
+
+.catalog-list li:hover {
+    background: rgba(255, 0, 110, 0.08);
+}
+
+.catalog-list .song {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.catalog-list .divider {
+    color: rgba(255, 0, 110, 0.6);
+    font-weight: bold;
+}
+
+.catalog-list .artist {
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.4);
+}
+
+.catalog-list .year {
+    color: #00ffff;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .catalog-list li {
+        gap: 5px;
+        padding: 15px 5px;
+    }
+    .catalog-list .divider {
+        display: none; 
+    }
+}
+
+/* ============================================
+   EVENTS SECTION
+   ============================================ */
+.events-section {
+    padding: 80px 20px;
+    background: #000000;
+    text-align: center;
+    border-bottom: 4px solid #ff006e;
+}
+
+.events-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+@media (max-width: 400px) {
+    .events-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.event-card {
+    background: rgba(0, 255, 255, 0.04);
+    padding: 40px 30px;
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #00ff00;
+    box-shadow: 0 0 30px #00ff00;
+}
+
+.event-date {
+    font-size: 1.8rem;
+    color: #ff006e;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #ff006e;
+}
+
+.event-date .day {
+    color: #fff;
+    text-shadow: none;
+    margin-left: 5px;
+}
+
+.event-details h3 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 10px;
+}
+
+.event-time, .event-location {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-description {
+    color: #00ff00;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #ff006e;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #ff006e;
+}
+
+/* ============================================
+   BOOKING SECTION
+   ============================================ */
+.booking-section {
+    padding: 80px 20px;
+    background: #000000;
+    text-align: center;
+    border-bottom: 4px solid #00ff00;
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+@media (max-width: 400px) {
+    .booking-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.booking-text, 
+.booking-form {
+    background: rgba(0, 255, 255, 0.05);
+    padding: 40px 30px;
+    border: 3px solid #ff006e;
+    box-shadow: 0 0 25px rgba(255, 0, 110, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-text h3, 
+.booking-form h3 {
+    margin-bottom: 25px;
+}
+
+.benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.benefits li {
+    font-size: 1rem;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    position: relative;
+    padding-left: 25px;
+}
+
+.benefits li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.contact-text {
+    margin-bottom: 20px;
+}
+
+.contact-method {
+    margin: 20px 0;
+}
+
+.method-label {
+    color: #00ff00;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact-link {
+    font-size: 1.3rem;
+    color: #ff006e;
+    font-weight: 900;
+    text-shadow: 0 0 10px #ff006e;
+}
+
+.contact-link:hover {
+    color: #00ff00;
+    text-shadow: 0 0 15px #00ff00;
+}
+
+.booking-note {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #fff;
+    margin-top: 15px;
+}
+
+/* ============================================
+   FOOTER BRANDING LOGO
+   ============================================ */
+.footer-logo-section {
+    padding: 40px 20px;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.shorthand-logo {
+    display: block;
+    margin: 0 auto;
+    width: min(60vw, 250px);
+    height: auto;
+    filter: 
+      drop-shadow(0 0 12px rgba(0, 255, 0, 0.4)) 
+      drop-shadow(0 0 25px rgba(255, 0, 110, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.shorthand-logo:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
+.footer {
+    padding: 50px 20px;
+    background: #000000;
+    text-align: center;
+    border-top: 4px solid #ff006e;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #00ffff;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 8px 25px;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    background: transparent;
+}
+
+.footer-links a:hover {
+    color: #ff006e;
+    border-color: #ff006e;
+    box-shadow: 0 0 20px #ff006e;
+}
